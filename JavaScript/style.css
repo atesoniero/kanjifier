@@ -139,6 +139,20 @@ body {
   color: hsl(278, 100%, 95%);
 }
 
+.fab {
+  font-size: 1.5rem;
+  color: hsl(278, 100%, 95%);
+  position: absolute;
+  bottom: .5%;
+  overflow: hidden;
+}
+
+.link:hover,
+.link:focus {
+  cursor: pointer;
+  /* opacity: .75; */
+}
+
 @media (min-width: 700px) {
   body {
     align-items: center;
@@ -151,6 +165,5 @@ body {
     text-align: center;
     color: hsla(0, 0%, 100%, .5);
     font-size: 4rem;
-  
   }
 }
