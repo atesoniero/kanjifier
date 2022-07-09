@@ -5,6 +5,8 @@
   box-sizing: border-box;
 }
 
+html {
+}
 /* Remove default margin */
 body,
 h1,
@@ -37,7 +39,8 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Noto Serif JP', serif;
+  /* font-family: 'Times New Roman', Times, serif; */
 }
 
 /* A elements that don't have a class get default styles */
