@@ -1,0 +1,17 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "Arabic to Japanese numbers converter",
+  "main": "kanjify.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Kanji",
+    "Number",
+    "Hiragana"
+  ],
+  "author": "Andrea Tesoniero",
+  "license": "ISC"
+}

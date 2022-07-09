@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Kanjifier</title>
+</head>
+
+<body class="container">
+    <h1 class="title">カンジファイ</h1>
+    <!-- <p>Text</p> -->
+    <form autocomplete="off">
+        <input type="number" class="number" value=42 min="0" max="999999999">
+    </form>
+    <button class="btn" type="submit" onclick="kanjify()">kanjify</button>
+
+    <div class="render_text">
+        <h2 class="kanji"></h2>
+        <h2 class="hiragana"></h2>
+        <h2 class="romaji"></h2>
+        <br>
+    </div>
+
+    <script src="dictonaries.js"></script>
+    <script src="arabic2kanji.js"></script>
+    <script src="arabic2hiragana.js"></script>
+    <script src="arabic2romaji.js"></script>
+    <script src="kanjify.js"></script>
+
+</body>
+
+</html>
+
+<!-- Rōmaji -->
