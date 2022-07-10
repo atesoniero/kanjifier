@@ -10,13 +10,17 @@ let romaji = "";
 function kanjify() {
   let num = document.querySelector(".number").value;
   const render = document.querySelector(".render_text");
-  console.log(isNaN(parseInt(num)));
+  // console.log(isNaN(parseInt(num)));
 
-  if (isNaN(parseInt(num))) {
+  if (isNaN(parseInt(num)) || parseInt(num) < 0) {
     message = `へ    へ <br>
+
                の    の <br>
-                 も    <br>
-                 へ    `;
+
+                  も   <br>
+
+                  へ    `;
+    console.log(message);
     document.getElementsByClassName("kanji")[0].innerHTML = message;
     document.getElementsByClassName("hiragana")[0].textContent = "";
     document.getElementsByClassName("romaji")[0].textContent = "";

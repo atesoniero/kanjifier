@@ -36,8 +36,8 @@ def len_three(n):
         return len_one(n[0]) + hiragana_dict["100"]
     hundreds = n[0] + "00"
     if hundreds in hiragana_dict:
-        return hiragana_dict[hundreds] + arabic2hiragana(str(int(n[1:])))
-    return len_one(n[0]) + hiragana_dict["100"] + arabic2hiragana(str(int(n[1:])))
+        return hiragana_dict[hundreds] + arabic2hiragana(str(units))
+    return len_one(n[0]) + hiragana_dict["100"] + arabic2hiragana(str(units))
 
 
 def len_four(n):
@@ -48,8 +48,8 @@ def len_four(n):
         return len_one(n[0]) + hiragana_dict["1000"]
     thousands = n[0] + "000"
     if thousands in hiragana_dict:
-        return hiragana_dict[thousands] + arabic2hiragana(n[1:])
-    return len_one(n[0]) + hiragana_dict["1000"] + arabic2hiragana(n[1:])
+        return hiragana_dict[thousands] + arabic2hiragana(str(units))
+    return len_one(n[0]) + hiragana_dict["1000"] + arabic2hiragana(str(units))
 
 
 def len_more(n):
@@ -58,7 +58,7 @@ def len_more(n):
         units = n[-4:]
         if int(units) == 0:
             return arabic2hiragana(man) + hiragana_dict["10000"]
-        return arabic2hiragana(man) + hiragana_dict["10000"] + arabic2hiragana(units)
+        return arabic2hiragana(man) + hiragana_dict["10000"] + arabic2hiragana(str(units))
     oku = n[0:-8]
     man = n[-8:-4]
     units = n[-4:]
@@ -67,5 +67,5 @@ def len_more(n):
     if int(man) > 0:
         res += arabic2hiragana(man) + hiragana_dict["10000"]
     if int(units) > 0:
-        res += arabic2hiragana(units)
+        res += arabic2hiragana(str(units))
     return res

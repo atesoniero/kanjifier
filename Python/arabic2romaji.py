@@ -36,8 +36,8 @@ def len_three(n):
         return len_one(n[0]) + " hyaku"
     hundreds = n[0] + "00"
     if hundreds in romaji_dict:
-        return romaji_dict[hundreds] + " " + arabic2romaji(str(int(n[1:])))
-    return len_one(n[0]) + " hyaku " + arabic2romaji(str(int(n[1:])))
+        return romaji_dict[hundreds] + " " + arabic2romaji(str(units))
+    return len_one(n[0]) + " hyaku " + arabic2romaji(str(units))
 
 
 def len_four(n):
@@ -48,8 +48,8 @@ def len_four(n):
         return len_one(n[0]) + " sen"
     thousands = n[0] + "000"
     if thousands in romaji_dict:
-        return romaji_dict[thousands] + " " + arabic2romaji(n[1:])
-    return len_one(n[0]) + " sen " + arabic2romaji(n[1:])
+        return romaji_dict[thousands] + " " + arabic2romaji(str(units))
+    return len_one(n[0]) + " sen " + arabic2romaji(str(units))
 
 
 def len_more(n):
@@ -58,7 +58,7 @@ def len_more(n):
         units = n[-4:]
         if int(units) == 0:
             return arabic2romaji(man) + " man"
-        return arabic2romaji(man) + " man " + arabic2romaji(units)
+        return arabic2romaji(man) + " man " + arabic2romaji(str(units))
     oku = n[0:-8]
     man = n[-8:-4]
     units = n[-4:]
@@ -67,5 +67,5 @@ def len_more(n):
     if int(man) > 0:
         res += arabic2romaji(man) + " man "
     if int(units) > 0:
-        res += arabic2romaji(units)
+        res += arabic2romaji(str(units))
     return res

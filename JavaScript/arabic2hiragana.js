@@ -45,9 +45,9 @@ function h_len_three(n) {
   }
   let hundreds = n[0] + "00";
   if (hundreds in hiragana_dict) {
-    return hiragana_dict[hundreds] + arabic2hiragana(n.slice(1));
+    return hiragana_dict[hundreds] + arabic2hiragana(units.toString());
   }
-  return h_len_one(n[0]) + hiragana_dict["100"] + arabic2hiragana(n.slice(1));
+  return h_len_one(n[0]) + hiragana_dict["100"] + arabic2hiragana(units.toString());
 }
 
 function h_len_four(n) {
@@ -60,9 +60,9 @@ function h_len_four(n) {
   }
   let thousands = n[0] + "000";
   if (thousands in hiragana_dict) {
-    return hiragana_dict[thousands] + arabic2hiragana(n.slice(1));
+    return hiragana_dict[thousands] + arabic2hiragana(units.toString());
   }
-  return h_len_one(n[0]) + hiragana_dict["1000"] + arabic2hiragana(n.slice(1));
+  return h_len_one(n[0]) + hiragana_dict["1000"] + arabic2hiragana(units.toString());
 }
 
 function h_len_more(n) {
@@ -73,7 +73,7 @@ function h_len_more(n) {
       return arabic2hiragana(man) + hiragana_dict["10000"];
     }
     return (
-      arabic2hiragana(man) + hiragana_dict["10000"] + arabic2hiragana(units)
+      arabic2hiragana(man) + hiragana_dict["10000"] + arabic2hiragana(units.toString())
     );
   }
   let oku = n.slice(0, -8);
@@ -85,7 +85,7 @@ function h_len_more(n) {
     res += arabic2hiragana(man) + hiragana_dict["10000"];
   }
   if (parseInt(units) > 0) {
-    res += arabic2hiragana(units);
+    res += arabic2hiragana(units.toString());
   }
   return res;
 }

@@ -45,9 +45,9 @@ function r_len_three(n) {
   }
   let hundreds = n[0] + "00";
   if (hundreds in romaji_dict) {
-    return romaji_dict[hundreds] + " " + arabic2romaji(n.slice(1));
+    return romaji_dict[hundreds] + " " + arabic2romaji(units.toString());
   }
-  return r_len_one(n[0]) + " hyaku " + arabic2romaji(n.slice(1));
+  return r_len_one(n[0]) + " hyaku " + arabic2romaji(units.toString());
 }
 
 function r_len_four(n) {
@@ -60,9 +60,9 @@ function r_len_four(n) {
   }
   let thousands = n[0] + "000";
   if (thousands in romaji_dict) {
-    return romaji_dict[thousands] + " " + arabic2romaji(n.slice(1));
+    return romaji_dict[thousands] + " " + arabic2romaji(units.toString());
   }
-  return r_len_one(n[0]) + " sen " + arabic2romaji(n.slice(1));
+  return r_len_one(n[0]) + " sen " + arabic2romaji(units.toString());
 }
 
 function r_len_more(n) {
@@ -72,7 +72,7 @@ function r_len_more(n) {
     if (parseInt(units) == 0) {
       return arabic2romaji(man) + " man";
     }
-    return arabic2romaji(man) + " man " + arabic2romaji(units);
+    return arabic2romaji(man) + " man " + arabic2romaji(units.toString());
   }
   let oku = n.slice(0, -8);
   let man = n.slice(-8, -4);
@@ -83,7 +83,7 @@ function r_len_more(n) {
     res += arabic2romaji(man) + " man ";
   }
   if (parseInt(units) > 0) {
-    res += arabic2romaji(units);
+    res += arabic2romaji(units.toString());
   }
   return res;
 }

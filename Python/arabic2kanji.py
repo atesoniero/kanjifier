@@ -32,12 +32,14 @@ def len_three(n):
     if n in kanji_dict:
         return kanji_dict[n]
     units = int(n) % 100
+    print(units)
     if units == 0:
         return len_one(n[0]) + kanji_dict["100"]
     hundreds = n[0] + "00"
+    print(hundreds)
     if hundreds in kanji_dict:
-        return kanji_dict[hundreds] + arabic2kanji(str(int(n[1:])))
-    return len_one(n[0]) + kanji_dict["100"] + arabic2kanji(str(int(n[1:])))
+        return kanji_dict[hundreds] + arabic2kanji(str(units))
+    return len_one(n[0]) + kanji_dict["100"] + arabic2kanji(str(units))
 
 
 def len_four(n):
@@ -48,8 +50,8 @@ def len_four(n):
         return len_one(n[0]) + kanji_dict["1000"]
     thousands = n[0] + "000"
     if thousands in kanji_dict:
-        return kanji_dict[thousands] + arabic2kanji(n[1:])
-    return len_one(n[0]) + kanji_dict["1000"] + arabic2kanji(n[1:])
+        return kanji_dict[thousands] + arabic2kanji(str(units))
+    return len_one(n[0]) + kanji_dict["1000"] + arabic2kanji(str(units))
 
 
 def len_more(n):
@@ -58,7 +60,7 @@ def len_more(n):
         units = n[-4:]
         if int(units) == 0:
             return arabic2kanji(man) + kanji_dict["10000"]
-        return arabic2kanji(man) + kanji_dict["10000"] + arabic2kanji(units)
+        return arabic2kanji(man) + kanji_dict["10000"] + arabic2kanji(str(units))
     oku = n[0:-8]
     man = n[-8:-4]
     units = n[-4:]
@@ -67,5 +69,5 @@ def len_more(n):
     if int(man) > 0:
         res += arabic2kanji(man) + kanji_dict["10000"]
     if int(units) > 0:
-        res += arabic2kanji(units)
+        res += arabic2kanji(str(units))
     return res
