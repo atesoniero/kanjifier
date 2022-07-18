@@ -12,15 +12,12 @@ function kanjify() {
   const render = document.querySelector(".render_text");
   // console.log(isNaN(parseInt(num)));
 
-  if (isNaN(parseInt(num)) || parseInt(num) < 0) {
-    message = `へ    へ <br>
-
-               の    の <br>
-
-                  も   <br>
-
-                  へ    `;
-    console.log(message);
+  if (isNaN(parseInt(num)) || parseInt(num) < 0 || parseInt(num) >= 1e12) {
+    message = `へ&nbsp&nbsp&nbsp&nbsp&nbspへ<br>
+               の&nbsp&nbsp&nbsp&nbsp&nbspの<br>
+               &nbsp&nbsp&nbsp&nbspも<br>
+               &nbsp&nbsp&nbsp&nbspへ`;
+    // console.log(message);
     document.getElementsByClassName("kanji")[0].innerHTML = message;
     document.getElementsByClassName("hiragana")[0].textContent = "";
     document.getElementsByClassName("romaji")[0].textContent = "";
