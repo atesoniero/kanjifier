@@ -93,6 +93,7 @@ body {
 }
 
 .title {
+  margin-top: 15%;
   font-size: 3rem;
   writing-mode: vertical-rl;
   text-orientation: upright;
@@ -142,18 +143,20 @@ body {
   color: hsl(278, 100%, 95%);
 }
 
-.fab {
-  font-size: 1.5rem;
-  color: hsl(278, 100%, 95%);
-  position: absolute;
-  bottom: .5%;
-  overflow: hidden;
+
+.link {
+  margin-top: auto;
 }
 
 .link:hover,
 .link:focus {
   cursor: pointer;
-  /* opacity: .75; */
+}
+
+.fab {
+  font-size: 1.5rem;
+  color: hsl(278, 100%, 95%);
+  overflow: hidden;
 }
 
 @media (min-width: 700px) {
